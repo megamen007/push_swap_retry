@@ -64,7 +64,6 @@ void sorting100_b_to_a(t_stack *stack)
     while(stack->counting_b)
     {
         biggest = extracting_biggest(stack);
-        // printf("biggest2 %d\n", biggest);
         moving_biggest_element(stack, biggest);
         pa(stack);
     }
@@ -77,7 +76,6 @@ void sorting500_b_to_a(t_stack *stack)
     while(stack->counting_b)
     {
         biggest = extracting_biggest(stack);
-        // printf("biggest2 %d\n", biggest);
         moving_biggest_element(stack, biggest);
         pa(stack);
     }

@@ -18,19 +18,19 @@ void	exit__(void)
 	exit(1);
 }
 
-void checking_is_already_sorted(t_stack *stack)
+int checking_is_already_sorted(t_stack *stack)
 {
 	int	i;
 
 	i = 0;
 	while (i < stack->stack_size - 1)
 	{
-		if (stack->stack_a[i] > stack->stack_a[i + 1])
+		if (stack->stack_a[i] < stack->stack_a[i + 1])
 			i++;
 		else
-			return ;
+			return(0);
 	}
-	exit__();
+	return(1);
 }
 int checking_is_already_backsorted(t_stack *stack)
 {
@@ -56,7 +56,19 @@ void sorting_backsorted_stack(t_stack *stack)
 		pa(stack);
 	}
 }
-void	print_stackb(t_stack *stacks)
+// void	print_stack_b(t_stack *stacks)
+// {
+// 	int	i;
+
+// 	i = stacks->stack_size - 1;// we initilize this to the size of the array 
+//     // because we want to print the top elemetn at the end :
+// 	while (i >= 0)
+// 	{
+// 		printf("B%i\n", stacks->stack_b[i]);
+// 		i--;
+// 	}
+// }
+void	print_stack_a(t_stack *stacks)
 {
 	int	i;
 
@@ -64,19 +76,7 @@ void	print_stackb(t_stack *stacks)
     // because we want to print the top elemetn at the end :
 	while (i >= 0)
 	{
-		printf("B%i\n", stacks->stack_b[i]);
-		i--;
-	}
-}
-void	print_stacka(t_stack *stacks)
-{
-	int	i;
-
-	i = stacks->stack_size - 1;// we initilize this to the size of the array 
-    // because we want to print the top elemetn at the end :
-	while (i >= 0)
-	{
-		printf("A%i\n", stacks->stack_a[i]);
+		printf("A---->%i\n", stacks->stack_a[i]);
 		i--;
 	}
 }

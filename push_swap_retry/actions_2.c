@@ -16,9 +16,10 @@ void	pb(t_stack *stack)
 {
 	stack->top_b++;
 	stack->stack_b[stack->top_b] = stack->stack_a[stack->top_a];
+	stack->stack_a[stack->top_a] = 0; 
 	stack->top_a--;
 	stack->counting_a--;
-	stack->counting_b++;
+	stack->stack_size++;
 	write(1, "pb\n", 3);
 }
 
@@ -26,8 +27,9 @@ void	pa(t_stack *stack)
 {
 	stack->top_a++;
 	stack->stack_a[stack->top_a] = stack->stack_b[stack->top_b];
+	stack->stack_a[stack->top_b] = 0;
 	stack->top_b--;
 	stack->counting_a++;
-	stack->counting_b--;
+	stack->stack_size--;
 	write(1, "pa\n", 3);
 }
