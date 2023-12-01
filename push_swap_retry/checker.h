@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 21:48:46 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/11/25 15:45:13 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:07:39 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void checker(t_stack *stc);
 int  checking_if_sorted(t_stack *stc);
 void filling_stack(t_stack *stc, int *element);
 void exit_();
+void arguments_count(t_stack *stc, char **av);
 int *fill_elements(char **av, t_stack *stc);
 char	*ft_save(char *r);
 char	*ft_get_line(char *r);

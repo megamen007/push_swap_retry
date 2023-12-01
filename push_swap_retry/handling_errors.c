@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:43:34 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/11/15 13:05:39 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/01 16:48:39 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ int duplicate_element(int *elements, int stack_size)
     return (1);
 }
 
-int out_of_int_range(int *elements)
+int out_of_int_range(char **str, int i)
 {
-    int i;
-    
-    i= 0;
-    while (elements[i])
-    {
-        if (elements[i] > INT_MAX || elements[i] < INT_MIN)
-            return (0);
-        i++;
-    }
-    return (1);
+
+    if (ft_atoi(str[i]) > INT_MAX || ft_atoi(str[i]) < INT_MIN)
+            return (1);
+    return (0);
 }
 
+int	ft_is_not_digit(int c)
+{
+	if ((c < '0' && c > '9'))
+		return (1);
+	return (0);
+}

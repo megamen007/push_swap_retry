@@ -6,17 +6,12 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:23:51 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/11/25 16:38:13 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:06:09 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	exit__(void)
-{
-	write(2, "the stack is already sorted\n", 28);
-	exit(1);
-}
 
 int checking_is_already_sorted(t_stack *stack)
 {
@@ -25,12 +20,12 @@ int checking_is_already_sorted(t_stack *stack)
 	i = 0;
 	while (i < stack->stack_size - 1)
 	{
-		if (stack->stack_a[i] < stack->stack_a[i + 1])
+		if (stack->stack_a[i] > stack->stack_a[i + 1])
 			i++;
 		else
-			return(0);
+			return(1);
 	}
-	return(1);
+	return(0);
 }
 int checking_is_already_backsorted(t_stack *stack)
 {

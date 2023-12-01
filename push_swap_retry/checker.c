@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 21:46:37 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/11/25 16:04:06 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:17:11 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void exit_()
 {
-    write(1,"ERROR\n", 6);
+    write(2,"Error\n", 6);
     exit(1);
 }
 
@@ -130,7 +130,7 @@ void checking_arg(char *str, t_stack *stc)
 	else if (ft_strcmp(str, "pb\n") == 0)
 		pb(stc);
     else 
-        return;
+        exit_();
 }
 void    checker_core(t_stack *stc)
 {
@@ -164,23 +164,39 @@ void	print_stack(t_stack *stacks)
 	}
 }
 
+void	arguments_count(t_stack *stc, char **av)
+{
+	int		i;
+	int		j;
+	char	**str;
+
+	i = 1;
+	while (av[i])
+	{
+		j = 0;
+		str = ft_split(av[i], ' ');
+		while (str[j])
+		{
+			j++;
+			stc->size++;
+		}
+		i++;
+		// freeee(str);
+	}
+}
+
 int main (int ac , char **av)
 {
     t_stack *stc;
     int *element;
 
+    (void)ac;
     stc = malloc(sizeof(t_stack));
-    stc->size = ac - 1;
+    arguments_count(stc , av);
     element = fill_elements(av, stc);
     checking_errors(element, stc);
     filling_stack(stc, element);
-    if (checking_if_sorted(stc) == 0)
-        {
-            write(1,"-->stack already sorted\n",24);
-            exit(0);
-        }
-    else 
-        {
-          checker(stc);
-        }
+    if (stc->size == 1)
+        exit(0);
+    checker(stc);
 }
