@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 22:49:49 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/11/25 16:48:23 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/03 07:35:22 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_save(char *r)
 	while (r[i])
 		s[j++] = r[i++];
 	s[j] = '\0';
-	free (r);
+	free(r);
 	return (s);
 }
 
@@ -60,10 +60,7 @@ char	*ft_get_line(char *r)
 		i++;
 	}
 	if (r[i] == '\n')
-	{
-		s[i] = '\n';
-		i++;
-	}
+		s[i++] = '\n';
 	s[i] = '\0';
 	return (s);
 }
@@ -82,8 +79,8 @@ char	*ft_read(int fd, char *r)
 		res = read(fd, buffer, BUFFER_SIZE);
 		if (res < 0)
 		{
-			free (buffer);
-			free (r);
+			free(buffer);
+			free(r);
 			return (NULL);
 		}
 		buffer[res] = '\0';
