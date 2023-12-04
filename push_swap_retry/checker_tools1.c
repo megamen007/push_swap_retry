@@ -71,11 +71,10 @@ void	checker(t_stack *stc)
 	while (str)
 	{
 		checking_arg(str, stc);
-        free(str);
+		free(str);
 		str = get_next_line(0);
 	}
 	checker_core(stc);
-    
 }
 
 void	checking_errors(int *element, t_stack *stc)

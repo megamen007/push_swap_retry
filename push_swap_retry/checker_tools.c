@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 22:35:51 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/03 04:33:14 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/04 01:09:24 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,19 @@ long long int	ft_atoi(const char *str)
 static int	word_counter(char const *s, char c)
 {
 	int	count;
+	int	i;
 
+	i = 0;
 	count = 0;
-	while (*s != '\0' && *s == c)
-		s++;
-	while (*s != '\0')
+	while (s[i] != '\0' && s[i] == c)
+		i++;
+	while (s[i] != '\0')
 	{
 		count++;
-		while (*s && *s != c)
-			s++;
-		while (*s && *s == c)
-			s++;
+		while (s[i] && s[i] != c)
+			i++;
+		while (s[i] && s[i] == c)
+			i++;
 	}
 	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:02:48 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/03 06:16:37 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/04 01:08:23 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void			exit_(void);
 long long int	ft_atoi(const char *str);
 char			**ft_split(char const *s, char c);
 int				checking_is_already_sorted(t_stack *stack);
-void			print_stack(t_stack *stacks);
 void			sorting_4(t_stack *stack);
 void			sorting_3(t_stack *stack);
 void			sorting_2(t_stack *stack);
@@ -69,8 +68,6 @@ void			sorting500_b_to_a(t_stack *stack);
 void			sorting100_a_to_b(t_stack *stack);
 void			sorting500_a_to_b(t_stack *stack);
 int				extracting_max(t_stack *stack);
-void			print_stack_b(t_stack *stacks);
-void			print_stack_a(t_stack *stacks);
 void			free_2d(char **str);
 int				checking_is_already_backsorted(t_stack *stack);
 void			sorting_backsorted_stack(t_stack *stack);

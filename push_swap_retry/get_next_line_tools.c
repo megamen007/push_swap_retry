@@ -42,7 +42,7 @@ char	*ft_strjoin(char *str1, char *str2)
 		return (NULL);
 	while (str1[i])
 		str3[j++] = str1[i++];
-    free(str1);
+	free(str1);
 	i = 0;
 	while (str2[i])
 		str3[j++] = str2[i++];
