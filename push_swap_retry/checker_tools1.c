@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 04:55:47 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/03 08:17:16 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:25:25 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ void	checker(t_stack *stc)
 {
 	char	*str;
 
-	str = get_next_line(0);
+	str = getting_line(0);
 	while (str)
 	{
 		checking_arg(str, stc);
 		free(str);
-		str = get_next_line(0);
+		str = getting_line(0);
 	}
 	checker_core(stc);
 }

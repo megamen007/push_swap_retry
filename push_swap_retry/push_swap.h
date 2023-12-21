@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:02:48 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/04 01:08:23 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:51:12 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ typedef struct s_stack
 }				t_stack;
 
 void			arguments_count(t_stack *stc, char **av);
-int				check_valid_arguments(char **av);
-int				ft_is_not_digit(int c);
 int				*elements_filling(char **av, int stack_size);
 int				duplicate_element(int *elements, int stack_size);
 int				out_of_int_range(char **str, int i);

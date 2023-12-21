@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 10:23:51 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/03 07:18:02 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:52:21 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	checking_is_already_sorted(t_stack *stack)
 	int	i;
 
 	i = 0;
-	while (i < stack->stack_size - 1)
+	while (i < stack->stack_size)
 	{
 		if (stack->stack_a[i] > stack->stack_a[i + 1])
 			i++;
@@ -32,7 +32,7 @@ int	checking_is_already_backsorted(t_stack *stack)
 	int	i;
 
 	i = 0;
-	while (i < stack->stack_size - 1)
+	while (i < stack->stack_size)
 	{
 		if (stack->stack_a[i] < stack->stack_a[i + 1])
 			i++;

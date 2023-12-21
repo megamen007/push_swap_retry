@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 09:54:52 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/03 07:16:18 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/21 18:27:08 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	*elements_filling(char **av, int stack_size)
 	char	**str;
 
 	elements = malloc(stack_size * sizeof(int));
+	if (!elements)
+		return (NULL);
 	i = 1;
 	j = 0;
 	while (av[i])
@@ -55,7 +57,11 @@ void	filling_stack(t_stack *stack, int *element)
 	stack->top_a = -1;
 	stack->top_b = -1;
 	stack->stack_a = malloc(sizeof(int) * stack->stack_size);
+	if (!stack->stack_a)
+		return ;
 	stack->stack_b = malloc(sizeof(int) * stack->stack_size);
+	if (!stack->stack_a)
+		return ;
 	while (i < stack->stack_size)
 	{
 		stack->stack_a[i] = element[j];
@@ -94,6 +100,8 @@ int	main(int ac, char **av)
 
 	(void)ac;
 	stack = malloc(sizeof(t_stack));
+	if (!stack)
+		return (0);
 	arguments_count(stack, av);
 	elements = elements_filling(av, stack->stack_size);
 	checking_errors(elements, stack->stack_size);
@@ -105,4 +113,5 @@ int	main(int ac, char **av)
 	free(stack->stack_a);
 	free(stack->stack_b);
 	free(stack);
+	return (0);
 }

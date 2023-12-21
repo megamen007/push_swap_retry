@@ -1,47 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_actions2.c                                 :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 04:51:35 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/21 18:16:39 by mboudrio         ###   ########.fr       */
+/*   Created: 2023/11/24 22:49:43 by mboudrio          #+#    #+#             */
+/*   Updated: 2023/12/21 18:05:45 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	pa(t_stack *stc)
+int	ft_strlen(char *str)
 {
-	if (stc->top_b > -1)
-	{
-		stc->top_a++;
-		stc->stack_a[stc->top_a] = stc->stack_b[stc->top_b];
-		stc->top_b--;
-		stc->count_a++;
-		stc->count_b--;
-	}
-	else
-		return ;
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
-void	pb(t_stack *stc)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if (stc->top_a > -1)
-	{
-		stc->top_b++;
-		stc->stack_b[stc->top_b] = stc->stack_a[stc->top_a];
-		stc->top_a--;
-		stc->count_a--;
-		stc->count_b++;
-	}
-	else
-		return ;
-}
+	int	i;
 
-void	exit_(void)
-{
-	write(2, "Error\n", 6);
-	exit(2);
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }

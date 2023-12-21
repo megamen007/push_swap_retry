@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 21:46:37 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/03 07:21:19 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/21 18:10:38 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,11 @@ void	filling_stack(t_stack *stc, int *element)
 	stc->top_a = -1;
 	stc->top_b = -1;
 	stc->stack_a = malloc(sizeof(int) * stc->size);
+	if (!stc->stack_a)
+		return ;
 	stc->stack_b = malloc(sizeof(int) * stc->size);
+	if (!stc->stack_b)
+		return ;
 	while (i < stc->size)
 	{
 		stc->stack_a[i] = element[j];
@@ -108,8 +112,11 @@ int	main(int ac, char **av)
 	int		*element;
 	t_stack	*stc;
 
-	(void)ac;
+	if (ac == 1)
+		return (0);
 	stc = malloc(sizeof(t_stack));
+	if (!stc)
+		return (0);
 	arguments_count(stc, av);
 	element = fill_elements(av, stc);
 	checking_errors(element, stc);
@@ -124,4 +131,5 @@ int	main(int ac, char **av)
 	free(stc->stack_a);
 	free(stc->stack_b);
 	free(stc);
+	return (0);
 }

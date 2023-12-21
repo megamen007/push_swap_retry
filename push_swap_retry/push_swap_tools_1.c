@@ -6,7 +6,7 @@
 /*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:13:08 by mboudrio          #+#    #+#             */
-/*   Updated: 2023/12/04 01:09:07 by mboudrio         ###   ########.fr       */
+/*   Updated: 2023/12/20 19:31:07 by mboudrio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ long long int	ft_atoi(const char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
+		if (str[i] == '-' && str[i + 1])
 			sign = sign * -1;
 		i++;
 	}
